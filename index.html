@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Truth or Dare</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <h1 class="title">Truth or Dare</h1>
-    <button class="btn" onclick="playGame('truth')">Truth</button>
-    <button class="btn" onclick="playGame('dare')">Dare</button>
+    <h1>Truth or Dare</h1>
+    <button onclick="playGame('truth')">Truth</button>
+    <button onclick="playGame('dare')">Dare</button>
     
-    <div id="question-box" class="popup">
+    <div id="question-box" class="fade-in">
         <p id="question"></p>
-        <button id="option1" class="choice-btn"></button>
-        <button id="option2" class="choice-btn"></button>
+        <button id="option1"></button>
+        <button id="option2"></button>
     </div>
     
-    <div id="upload-box" class="popup">
+    <div id="upload-box" class="fade-in">
         <p id="dare-text"></p>
         <input type="file" accept="video/*" id="video-upload">
-        <button class="btn" onclick="uploadVideo()">Upload</button>
+        <button onclick="uploadVideo()">Upload</button>
         <p id="upload-status"></p>
     </div>
 
