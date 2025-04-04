@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Truth or Dare</h1>
+    <button onclick="playGame('truth')">Truth</button>
+    <button onclick="playGame('dare')">Dare</button>
+    
+    <div id="question-box" class="fade-in">
+        <p id="question"></p>
+        <button id="option1"></button>
+        <button id="option2"></button>
+    </div>
+    
+    <div id="upload-box" class="fade-in">
+        <p id="dare-text"></p>
+        <input type="file" accept="video/*" id="video-upload">
+        <button onclick="uploadVideo()">Upload</button>
+        <p id="upload-status"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

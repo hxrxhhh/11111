@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#question-box, #upload-box {
+    display: none;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 20px auto;
+    width: 50%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
