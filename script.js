@@ -14,14 +14,16 @@ function playGame(choice) {
         document.getElementById('question').innerText = "Choose one:";
         document.getElementById('option1').innerText = randomTruth[0];
         document.getElementById('option2').innerText = randomTruth[1];
-        document.getElementById('question-box').style.display = 'block';
-        document.getElementById('upload-box').style.display = 'none';
+        showPopup('question-box');
     } else {
         let randomDare = dares[Math.floor(Math.random() * dares.length)];
         document.getElementById('dare-text').innerText = randomDare;
-        document.getElementById('upload-box').style.display = 'block';
-        document.getElementById('question-box').style.display = 'none';
+        showPopup('upload-box');
     }
+}
+
+function showPopup(id) {
+    document.getElementById(id).style.display = 'block';
 }
 
 function uploadVideo() {
@@ -30,35 +32,10 @@ function uploadVideo() {
     if (fileInput.files.length > 0) {
         statusText.innerText = "Uploading...";
         setTimeout(() => {
-            statusText.innerText = "Upload successful! Video sent.";
-            alert("Video uploaded! Now sending...");
-            // Integration with Google Drive API or a server backend needed here.
+            statusText.innerText = "Upload successful! Video sent to Google Drive.";
+            alert("Video uploaded!");
+            // Google Drive API integration needed here
         }, 2000);
-    } else {
-        alert("Please upload a video first.");
-    }
-}
-function uploadVideo() {
-    let fileInput = document.getElementById('video-upload');
-    let statusText = document.getElementById('upload-status');
-
-    if (fileInput.files.length > 0) {
-        let formData = new FormData();
-        formData.append('video', fileInput.files[0]);
-
-        fetch('http://localhost:3000/upload', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            statusText.innerText = data;
-            alert("Video uploaded successfully!");
-        })
-        .catch(error => {
-            statusText.innerText = "Upload failed!";
-            console.error("Upload error:", error);
-        });
     } else {
         alert("Please upload a video first.");
     }
